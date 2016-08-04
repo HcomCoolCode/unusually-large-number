@@ -5,7 +5,7 @@ import Cocoa
 import XCTest
 
 func largestNumberComposed(from: Array<Int>) -> Int {
-    return from[0]
+   return Int(from.map{String($0)}.sort(>).joinWithSeparator(""))!
 }
 
 /// tests
