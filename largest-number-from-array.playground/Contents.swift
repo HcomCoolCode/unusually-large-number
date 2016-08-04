@@ -14,4 +14,7 @@ XCTAssertEqual(9, largestNumberComposed(from: [9]))
 
 XCTAssertEqual(90, largestNumberComposed(from: [9,0]))
 
-// XCTAssertEqual(910, largestNumberComposed(from: [10,9]))
+XCTAssertEqual(910, largestNumberComposed(from: [10,9]))
+
+XCTAssertEqual(95021, largestNumberComposed(from: [50,2,1,9]))
+
