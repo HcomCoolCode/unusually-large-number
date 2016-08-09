@@ -5,13 +5,15 @@ import Cocoa
 import XCTest
 
 func largestNumberComposed(from: Array<Int>) -> Int {
-    return from[0]
+   return Int(from.map{String($0)}.sort{$0+$1>$1+$0}.joinWithSeparator(""))!
 }
-
 /// tests
 
 XCTAssertEqual(9, largestNumberComposed(from: [9]))
 
 XCTAssertEqual(90, largestNumberComposed(from: [9,0]))
 
-// XCTAssertEqual(910, largestNumberComposed(from: [10,9]))
+XCTAssertEqual(910, largestNumberComposed(from: [10,9]))
+
+XCTAssertEqual(56554, largestNumberComposed(from: [54,5,56]))
+
