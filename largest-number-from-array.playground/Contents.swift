@@ -6,17 +6,7 @@ import XCTest
 
 func largestNumberComposed(from: Array<Int>) -> Int {
     return Int(from.map{String($0)}
-        .sort(
-            {
-                if ($0.hasPrefix($1)) {
-                    return false;
-                }
-                else if ($1.hasPrefix($0)) {
-                    return true;
-                }
-                return $0>$1;
-            }
-        )
+        .sort({!$0.hasPrefix($1) && ($1.hasPrefix($0) || $0>$1)})
         .joinWithSeparator(""))!
 }
 /// tests
