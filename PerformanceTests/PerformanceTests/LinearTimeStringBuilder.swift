@@ -1,13 +1,17 @@
-//: 
-//: Original source for problem => https://www.shiftedup.com/2015/05/07/five-programming-problems-every-software-engineer-should-be-able-to-solve-in-less-than-1-hour
+//
+//  LinearTimeStringBuilder.swift
+//  PerformanceTests
+//
+//  Created by Antonio Tanzola on 11/08/2016.
+//  Copyright © 2016 Antonio Tanzola. All rights reserved.
+//
 
-import Cocoa
-import XCTest
+import Foundation
 
 /*
  'linearTimeStringBuilder' has an asymptotic tight bound Θ(n + d + m) where
- - 'd' is the number of symbols used in decimal notation (10)
- - 'm' is the number of digits of the largest number in the array (e.g. if 9563 is the largest number then 'm' = 4)
+    - 'd' is the number of symbols used in decimal notation (10)
+    - 'm' is the number of digits of the largest number in the array (e.g. if 9563 is the largest number then 'm' = 4)
  
  For 'n>>d' and 'n>>m', 'd' and 'm' become constant factors and
  'linearTimeStringBuilder' runs in linear time - Θ(n)
@@ -80,12 +84,3 @@ private func countingSort(_ numbers:[Int], digitIndex: Int) -> [Int]
     
     return sortedNumbers
 }
-
-//MARK: Tests
-
-XCTAssertEqual("9", linearTimeStringBuilder(withIntegers: [9]))
-XCTAssertEqual("91", linearTimeStringBuilder(withIntegers: [9,1]))
-XCTAssertEqual("910", linearTimeStringBuilder(withIntegers: [10,9]))
-XCTAssertEqual("7187171463441", linearTimeStringBuilder(withIntegers: [63, 71, 714, 718, 4, 41]))
-XCTAssertEqual("52552", linearTimeStringBuilder(withIntegers: [525, 52]))
-XCTAssertEqual("56565", linearTimeStringBuilder(withIntegers: [565, 56]))
